@@ -1,0 +1,581 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: #f5f3ee;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+}
+
+/* Ventana principal */
+.browser-window {
+    width: min(1240px, 100%);
+    height: 780px;
+    background: #fff;
+    border: 1px solid #e5e2dc;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Barra superior */
+.top-bar {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.window-dots {
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    display: flex;
+    gap: 7px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.pink {
+    background: #f7c9df;
+}
+
+.yellow {
+    background: #f2dfb9;
+}
+
+.blue {
+    background: #c8d9ee;
+}
+
+.address-bar {
+    width: 58%;
+    max-width: 650px;
+    height: 22px;
+    border-radius: 20px;
+    background: #f5f3ef;
+}
+
+/* Tablero */
+.inspo-board {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 42px);
+    overflow: hidden;
+    background-color: #fff;
+    background-image: radial-gradient(#d8d8d8 0.8px, transparent 0.8px);
+    background-size: 30px 30px;
+}
+
+
+/* Tarjeta de cada imagen */
+.image-card {
+    position: absolute;
+    z-index: 1;
+    overflow: visible;
+}
+
+.photo {
+    width: 100%;
+    overflow: hidden;
+    background: #ddd;
+    border-radius: 9px;
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.12);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Nombre colocado inmediatamente debajo de su imagen */
+.image-name {
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #444;
+    white-space: normal;
+}
+
+/* =========================================================
+   ESCRITORIO
+   9 imágenes desordenadas y sin superposición
+   ========================================================= */
+
+/* Imagen 1 - izquierda superior */
+.image-1 {
+    width: 145px;
+    left: 0;
+    top: 42px;
+}
+
+.image-1 .photo {
+    height: 200px;
+}
+
+/* Imagen 2 - arriba, desplazada hacia la izquierda */
+.image-2 {
+    width: 245px;
+    left: 19%;
+    top: 0;
+}
+
+.image-2 .photo {
+    height: 180px;
+}
+
+/* Imagen 3 - arriba a la derecha del centro */
+.image-3 {
+    width: 220px;
+    left: 54%;
+    top: 0;
+}
+
+.image-3 .photo {
+    height: 220px;
+}
+
+/* Imagen 4 - derecha superior */
+.image-4 {
+    width: 160px;
+    right: 0;
+    top: 55px;
+}
+
+.image-4 .photo {
+    height: 250px;
+}
+
+/* Imagen 5 - izquierda media */
+.image-5 {
+    width: 230px;
+    left: 0;
+    top: 350px;
+}
+
+.image-5 .photo {
+    height: 170px;
+}
+
+/* Imagen 6 - derecha media */
+.image-6 {
+    width: 200px;
+    right: 17%;
+    top: 350px;
+}
+
+.image-6 .photo {
+    height: 170px;
+}
+
+/* Imagen 7 - abajo izquierda */
+.image-7 {
+    width: 190px;
+    left: 17%;
+    bottom: 28px;
+}
+
+.image-7 .photo {
+    height: 150px;
+}
+
+/* Imagen 8 - abajo, ligeramente desplazada */
+.image-8 {
+    width: 230px;
+    left: 43%;
+    bottom: 28px;
+}
+
+.image-8 .photo {
+    height: 160px;
+}
+
+/* Imagen 9 - abajo derecha */
+.image-9 {
+    width: 165px;
+    right: 0;
+    bottom: 28px;
+}
+
+.image-9 .photo {
+    height: 220px;
+}
+
+/* Tarjeta central */
+.center-card {
+    position: absolute;
+    z-index: 3;
+    width: 340px;
+    min-height: 225px;
+    left: 50%;
+    top: 260px;
+    transform: translateX(-50%);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.center-card h1 {
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -3px;
+    margin-bottom: 14px;
+}
+
+.center-card p {
+    font-size: 17px;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.center-card button {
+    border: none;
+    background: #111;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.center-card button:hover {
+    background: #2d2d2d;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   PANTALLAS MEDIANAS
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    body {
+        padding: 16px;
+    }
+
+    .browser-window {
+        height: 720px;
+    }
+
+    /* Reducimos tamaños manteniendo la separación */
+    .image-1 {
+        width: 120px;
+        top: 35px;
+    }
+
+    .image-1 .photo {
+        height: 165px;
+    }
+
+    .image-2 {
+        width: 205px;
+        left: 18%;
+    }
+
+    .image-2 .photo {
+        height: 150px;
+    }
+
+    .image-3 {
+        width: 180px;
+        left: 54%;
+    }
+
+    .image-3 .photo {
+        height: 185px;
+    }
+
+    .image-4 {
+        width: 135px;
+        top: 45px;
+    }
+
+    .image-4 .photo {
+        height: 205px;
+    }
+
+    .image-5 {
+        width: 190px;
+        top: 325px;
+    }
+
+    .image-5 .photo {
+        height: 145px;
+    }
+
+    .image-6 {
+        width: 170px;
+        right: 16%;
+        top: 325px;
+    }
+
+    .image-6 .photo {
+        height: 145px;
+    }
+
+    .image-7 {
+        width: 160px;
+        left: 15%;
+        bottom: 25px;
+    }
+
+    .image-7 .photo {
+        height: 125px;
+    }
+
+    .image-8 {
+        width: 190px;
+        left: 43%;
+        bottom: 25px;
+    }
+
+    .image-8 .photo {
+        height: 135px;
+    }
+
+    .image-9 {
+        width: 140px;
+        bottom: 25px;
+    }
+
+    .image-9 .photo {
+        height: 180px;
+    }
+
+    .image-name {
+        font-size: 11px;
+    }
+
+    .center-card {
+        width: 300px;
+        min-height: 205px;
+        top: 240px;
+    }
+
+    .center-card h1 {
+        font-size: 48px;
+    }
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 760px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .browser-window {
+        width: 100%;
+        height: auto;
+        min-height: 1120px;
+        border-radius: 12px;
+    }
+
+    .inspo-board {
+        height: 1080px;
+        min-height: 0;
+        overflow: hidden;
+        background-size: 22px 22px;
+    }
+
+    .address-bar {
+        width: 48%;
+    }
+
+    /* En móvil también se mantienen desordenadas,
+       pero con posiciones separadas para no tocarse. */
+
+    .image-1 {
+        width: 100px;
+        left: 0;
+        top: 35px;
+    }
+
+    .image-1 .photo {
+        height: 145px;
+    }
+
+    .image-2 {
+        width: 145px;
+        left: 24%;
+        top: 15px;
+    }
+
+    .image-2 .photo {
+        height: 115px;
+    }
+
+    .image-3 {
+        width: 125px;
+        left: auto;
+        right: 2%;
+        top: 25px;
+    }
+
+    .image-3 .photo {
+        height: 145px;
+    }
+
+    .image-4 {
+        width: 105px;
+        right: 0;
+        top: 235px;
+    }
+
+    .image-4 .photo {
+        height: 175px;
+    }
+
+    .image-5 {
+        width: 130px;
+        left: 0;
+        top: 300px;
+    }
+
+    .image-5 .photo {
+        height: 135px;
+    }
+
+    .image-6 {
+        width: 125px;
+        right: 22%;
+        top: 345px;
+    }
+
+    .image-6 .photo {
+        height: 125px;
+    }
+
+    .image-7 {
+        width: 125px;
+        left: 4%;
+        bottom: 30px;
+    }
+
+    .image-7 .photo {
+        height: 115px;
+    }
+
+    .image-8 {
+        width: 140px;
+        left: 31%;
+        bottom: 20px;
+    }
+
+    .image-8 .photo {
+        height: 105px;
+    }
+
+    .image-9 {
+        width: 115px;
+        right: 0;
+        bottom: 30px;
+    }
+
+    .image-9 .photo {
+        height: 145px;
+    }
+
+    .image-name {
+        margin-top: 6px;
+        font-size: 10px;
+    }
+
+    /* Centro desplazado a una zona libre */
+    .center-card {
+        width: 235px;
+        min-height: 185px;
+        left: 50%;
+        top: 560px;
+        padding: 24px 18px;
+    }
+
+    .center-card h1 {
+        font-size: 42px;
+    }
+
+    .center-card p {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .inspo-board {
+        height: 1040px;
+    }
+
+    .image-1 {
+        width: 92px;
+    }
+
+    .image-2 {
+        width: 128px;
+        left: 23%;
+    }
+
+    .image-3 {
+        width: 112px;
+    }
+
+    .image-4 {
+        width: 95px;
+    }
+
+    .image-5 {
+        width: 118px;
+    }
+
+    .image-6 {
+        width: 112px;
+        right: 21%;
+    }
+
+    .image-7 {
+        width: 112px;
+    }
+
+    .image-8 {
+        width: 125px;
+    }
+
+    .image-9 {
+        width: 102px;
+    }
+
+    .center-card {
+        width: 215px;
+        top: 535px;
+    }
+}
